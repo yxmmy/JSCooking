@@ -7,10 +7,10 @@ recettes = [{
     dureePreparation: 900,
     dureeRepos: 0,
     dureeCuisson: 900,
+    dureeTotale: dureeCuisson + dureeRepos + dureeCuisson,
     nbPersonnes: 4,
     ustensiles:  ['passoire', 'poele', 'cuillere en bois'],
     difficulte: 'Très facile.',
-    dureeTotale: dureeCuisson + dureeRepos + dureeCuisson,
 },
 
 {
@@ -37,6 +37,19 @@ recettes = [{
     difficulte: 'Moyenne',
 }]
 
-filterItems(recettes, 'plat', '')
+/*function filterItems (recettes, key, value) {
+    let filteredRecipes = [];
+    for(let i=0; i < recettes.length; i++) {
+        if(recettes[i][key] === value){
+            filteredRecipes.push(recettes[i]);              Revoir ce code
+        }
+    }
+    groupItemBy()
+    return filteredRecipes
+}*/
+
+const easyRecipes = filterItems(recettes, 'difficulte', 'Facile')
+const fastRecipes = filterItems(recettes, 'dureeCuisson', 0)
+
 
 filter(recettes,'plat',)
