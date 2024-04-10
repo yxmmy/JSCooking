@@ -34,7 +34,24 @@ let recettes = [{
     nbPersonnes: 5,
     ustensiles: ['1 bol', '1 couvercle', '1 couteau', '1 marmite', '1 balance'],
     difficulte: 'Moyenne',
-}]
+},
+
+{
+    plat: 'Pâtes à la carbonara',
+    ingredients: ['oignon', 'poivre', 'sel', '3 cuillères à soupe d huile de tournesol', '800g de crevettes','500g de farine', 'une grande boite de tomates pelees', '1 cuillères a cafe', '1 gouse d ail'],
+    dureePreparation: 1900,
+    dureeRepos: 0,
+    dureeCuisson: 2400,
+    dureeTotale: 10,
+    nbPersonnes: 2 ,
+    ustensiles: ['1 bol', '1 couvercle', '1 couteau', '1 marmite', '1 balance'],
+    difficulte: 'Facile',
+},
+
+{
+
+}
+]
 
 function filterItems(recettes, key, value) {
     let filteredRecipes = [];
