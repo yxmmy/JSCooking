@@ -7,7 +7,6 @@ recettes = [{
     dureePreparation: 900,
     dureeRepos: 0,
     dureeCuisson: 900,
-    dureeTotale: dureeCuisson + dureeRepos + dureeCuisson,
     nbPersonnes: 4,
     ustensiles:  ['passoire', 'poele', 'cuillere en bois'],
     difficulte: 'Très facile.',
