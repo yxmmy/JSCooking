@@ -146,7 +146,7 @@ function filterItems(recettes, key, value) {
 }
 
 const easyRecipes = filterItems(recettes, 'difficulte', 'Facile');
-const fastRecipes = filterItems(recettes, 'dureeCuisson', <4000);
+const fastRecipes = filterItems(recettes, 'dureeCuisson', 0);
 
 console.log("Recettes faciles :", easyRecipes);
 console.log("Recettes rapides :", fastRecipes);
