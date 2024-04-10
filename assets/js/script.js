@@ -1,5 +1,6 @@
 //les durees sont en secondes.
 
+
 let recettes = [{
     menu: 'Riz au curry',
     type: 'plat',
