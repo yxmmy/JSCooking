@@ -1,7 +1,6 @@
 
 
-
-recettes = [{
+let recettes = [{
     plat: 'Riz au curry',
     ingredients: ['2 cuilleres a soupe d huile d olive', 'curry en poudre', 'cube de bouillon', '2 tasses de riz', 'eau'], 
     dureePreparation: 900,
@@ -9,8 +8,8 @@ recettes = [{
     dureeCuisson: 900,
     nbPersonnes: 4,
     ustensiles:  ['passoire', 'poele', 'cuillere en bois'],
-    difficulte: 'Très facile.',
-    dureeTotale: dureeCuisson + dureeRepos + dureeCuisson,
+    difficulte: 'Facile.',
+    dureeTotale: 10,
 },
 
 {
@@ -19,37 +18,42 @@ recettes = [{
     dureePreparation: 1500,
     dureeRepos: 0,
     dureeCuisson: 3300,
-    dureeTotale: dureeCuisson + dureeRepos + dureeCuisson,
+    dureeTotale: 10,
     nbPersonnes: 1,
     ustensiles:  ['1 casserole', '1 four', '3 poeles', 'planche a decouper'],
     difficulte: 'Facile',
 },
 
 {
-    plat: "Dombre au crevettes",
+    plat: "Dombre aux crevettes",
     ingredients: ['oignon', 'poivre', 'sel', '3 cuillères à soupe d huile de tournesol', '800g de crevettes','500g de farine', 'une grande boite de tomates pelees', '1 cuillères a cafe', '1 gouse d ail'],
     dureePreparation: 1900,
     dureeRepos: 0,
     dureeCuisson: 2400,
-    dureeTotale: dureeCuisson + dureeRepos + dureeCuisson,
+    dureeTotale: 10,
     nbPersonnes: 5,
     ustensiles: ['1 bol', '1 couvercle', '1 couteau', '1 marmite', '1 balance'],
     difficulte: 'Moyenne',
 }]
 
-function filterItems (recettes, key, value) {
+function filterItems(recettes, key, value) {
     let filteredRecipes = [];
-    for(let i=0; i < recettes.length; i++) {
-        if(recettes[i][key] === value){
-            filteredRecipes.push(recettes[i]);              //Revoir ce code
+
+    // Filtrer les recettes en fonction de la clé et de la valeur spécifiées
+    for (let recipe of recettes) {
+        if (recipe[key] === value) {
+            filteredRecipes.push(recipe);
         }
     }
-    groupItemBy
-    return filteredRecipes
+
+    return filteredRecipes;
 }
 
-const easyRecipes = filterItems(recettes, 'difficulte', 'Facile')
-const fastRecipes = filterItems(recettes, 'dureeCuisson', 0)
+const easyRecipes = filterItems(recettes, 'difficulte', 'Facile');
+const fastRecipes = filterItems(recettes, 'dureeCuisson', 0);
+
+console.log("Recettes faciles :", easyRecipes);
+console.log("Recettes rapides :", fastRecipes);
 
 
-filter(recettes,'plat',)
+
