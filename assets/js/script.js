@@ -119,7 +119,7 @@ let recettes = [{
 
 {
     menu: 'Punch',
-    type: 'Boisson'
+    type: 'Boisson',
     ingredients: ['poivre de moulin + un peu de cannelle', '4 cuilleres a soupe de vanille liquide', '1 gousse de vanille', '1L de rhum blanc', '1L de jus de banane', '1L de goyave', '1L de jus d ananas, 1L de jus d orange', 'jus de citron vert', '2 verres de sirop de sucre de canne'],
     dureePreparation: 600,
     dureeRepos: 0,
