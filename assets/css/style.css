@@ -1,95 +1,143 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap");
+
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 body {
-    font-family: Arial, Helvetica, sans-serif;
+  padding: 0;
+  margin: 0;
+  font-family: "Poppins", sans-serif;
 }
 
-.navbar {
-    font-size: 18px;
-    background: linear-gradient(9deg, #c02c2c, #2cc05d, #962cc0, #c02c51, #2cb6c0, #c0aa2c);
-    border-bottom: #615858 4px solid;
-    border-bottom-left-radius: 40px;
-    border-bottom-right-radius: 40px;
-    padding-bottom: 10px;
+nav {
+  padding: 5px 5%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+    rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  z-index: 1;
+}
+nav .logo {
+  display: flex;
+  align-items: center;
+}
+nav .logo img {
+  height: 25px;
+  width: auto;
+  margin-right: 10px;
+}
+nav .logo h1 {
+  font-size: 1.1rem;
+  background: linear-gradient(to right, #b927fc 0%, #2c64fc 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
-.main-nav {
-    list-style-type: none;
-    display: none;
+nav ul {
+  list-style: none;
+  display: flex;
+}
+nav ul li {
+  margin-left: 1.5rem;
+}
+nav ul li a {
+  text-decoration: none;
+  color: #000;
+  font-size: 95%;
+  font-weight: 400;
+  padding: 4px 8px;
+  border-radius: 5px;
 }
 
-.nav-links, .logo, .material-icons {
-    text-decoration: none;
-    color: ghostwhite;
-    opacity: 0.6;
+nav ul li a:hover {
+  background-color: #f5f5f5;
 }
 
-.main-nav li {
-    text-align: center;
-    margin: 10px auto;
+.hamburger {
+  display: none;
+  cursor: pointer;
 }
 
-.logo {
-    display: flex;
-    font-size: 24px;
-    margin-top: 10px;
-    margin-left: 30px;
+.hamburger .line {
+  width: 25px;
+  height: 1px;
+  background-color: #1f1f1f;
+  display: block;
+  margin: 7px auto;
+  transition: all 0.3s ease-in-out;
+}
+.hamburger-active {
+  transition: all 0.3s ease-in-out;
+  transition-delay: 0.6s;
+  transform: rotate(45deg);
 }
 
-.logo img {
-    height: 50px;
-    width: 50px;
-    border-radius: 50px;
+.hamburger-active .line:nth-child(2) {
+  width: 0px;
 }
 
-.logo p {
-    margin-top: 12px;
-    padding-left: 5px;
+.hamburger-active .line:nth-child(1),
+.hamburger-active .line:nth-child(3) {
+  transition-delay: 0.3s;
 }
 
-.toggle-nav {
-    position: absolute;
-    top: 20px;
-    right: 20px;
+.hamburger-active .line:nth-child(1) {
+  transform: translateY(12px);
 }
 
-.material-icons {
-    font-size: 24px;
+.hamburger-active .line:nth-child(3) {
+  transform: translateY(-5px) rotate(90deg);
 }
 
+.menubar {
+  position: absolute;
+  top: 0;
+  left: -60%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  width: 60%;
+  height: 100vh;
+  padding: 20% 0;
+  background: rgba(255, 255, 255);
+  transition: all 0.5s ease-in;
+  z-index: 2;
+}
 .active {
-    display: block;
+  left: 0;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
 
-/* For large screen more than 600 */
+.menubar ul {
+  padding: 0;
+  list-style: none;
+}
+.menubar ul li {
+  margin-bottom: 32px;
+}
 
-@media screen and (min-width:600px) {
-    .navbar {
-        display: flex;
-        justify-content: space-between;
-        padding-bottom: 0;
-        height: 70px;
-        align-items: center;
-    }
-    .toggle-nav {
-        display: none;
-    }
-    .main-nav {
-        display: flex;
-        justify-content: end;
-        margin-right: 30px;
-    }
-    .main-nav>li {
-        margin: 0;
-    }
-    .nav-links {
-        margin-left: 20px;
-    }
-    .logo {
-        margin-top: 0;
-    }
+.menubar ul li a {
+  text-decoration: none;
+  color: #000;
+  font-size: 95%;
+  font-weight: 400;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+.menubar ul li a:hover {
+  background-color: #f5f5f5;
+}
+@media screen and (max-width: 790px) {
+  .hamburger {
+    display: block;
+  }
+  nav ul {
+    display: none;
+  }
 }
