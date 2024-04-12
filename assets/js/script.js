@@ -163,7 +163,7 @@ setTimeout(() => {
   }, 1000);
 
 
-  const mobileNav = document.querySelector(".hamburger");
+const mobileNav = document.querySelector(".hamburger");
 const navbar = document.querySelector(".menubar");
 
 const toggleNav = () => {
