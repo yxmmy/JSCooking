@@ -2,41 +2,38 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>nav bar</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
 </head>
 
 <body>
-  <header id="nav-wrapper">
-    <nav id="nav">
-      <div class="nav left">
-        <span class="gradient skew"><h1 class="logo un-skew"><a href="#home">Logo Here</a></h1></span>
-        <button id="menu" class="btn-nav"><span class="fas fa-bars"></span></button>
-      </div>
-      <div class="nav right">
-        <a href="#home" class="nav-link active"><span class="nav-link-span"><span class="u-nav">Home</span></span></a>
-        <a href="#about" class="nav-link"><span class="nav-link-span"><span class="u-nav">About</span></span></a>
-        <a href="#work" class="nav-link"><span class="nav-link-span"><span class="u-nav">Work</span></span></a>
-        <a href="#contact" class="nav-link"><span class="nav-link-span"><span class="u-nav">Contact</span></span></a>
-      </div>
+    <nav class="navbar">
+        <span class="toggle-nav" id="toggle-nav">
+            <i class="material-icons">menu</i>
+        </span>
+        <!-- <div class=""> -->
+        <a href="#" class="logo"><img src="logo.jpg" alt="">
+            <p>Company Name</p>
+        </a>
+        <!-- </div> -->
+        <ul class="main-nav" id="main-nav">
+            <li><a href="#" class="nav-links">Home</a></li>
+            <li><a href="#" class="nav-links">News</a></li>
+            <li><a href="#" class="nav-links">Conatct</a></li>
+            <li><a href="#" class="nav-links">About</a></li>
+        </ul>
     </nav>
-  </header>
-  <main>
-    <section id="home">
-
-    </section>
-    <section id="about">
-
-    </section>
-    <section id="work">
-
-    </section>
-    <section id="contact">
-
-    </section>
-  </main>
-
+    <script>
+        let mainNav = document.getElementById('main-nav');
+        let toggleNav = document.getElementById('toggle-nav');
+        toggleNav.addEventListener('click', function () {
+            mainNav.classList.toggle('active')
+        });
+    </script>
 </body>
 
 </html>
