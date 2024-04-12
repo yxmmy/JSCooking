@@ -152,18 +152,50 @@ const fastRecipes = filterItems(recettes, 'dureeCuisson', 0);
 console.log("Recettes faciles :", easyRecipes);
 console.log("Recettes rapides :", fastRecipes);
 
-window.setInterval(() => {
-    const now = new Date()
-    console.log('Il est', ${now.getHours()},'h',${now.getMinutes()},'et'${now.getSeconds()})
+setTimeout(() => {
+    console.log("this is the first message");
+  }, 5000);
+  setTimeout(() => {
+    console.log("this is the second message");
+  }, 3000);
+  setTimeout(() => {
+    console.log("this is the third message");
+  }, 1000);
+
+var util = {
+    mobileMenu() {
+      $("#nav").toggleClass("nav-visible");
+    },
+    windowResize() {
+      if ($(window).width() > 800) {
+        $("#nav").removeClass("nav-visible");
+      }
+    },
+    scrollEvent() {
+      var scrollPosition = $(document).scrollTop();
+      
+      $.each(util.scrollMenuIds, function(i) {
+        var link = util.scrollMenuIds[i],
+            container = $(link).attr("href"),
+            containerOffset = $(container).offset().top,
+            containerHeight = $(container).outerHeight(),
+            containerBottom = containerOffset + containerHeight;
+  
+        if (scrollPosition < containerBottom - 20 && scrollPosition >= containerOffset - 20) {
+          $(link).addClass("active");
+        } else {
+          $(link).removeClass("active");
+        }
+      });
+    }
+  };
+  
+  $(document).ready(function() {
     
-}, 3000);
-
-const mobileNav = document.querySelector(".hamburger");
-const navbar = document.querySelector(".menubar");
-
-const toggleNav = () => {
-  navbar.classList.toggle("active");
-  mobileNav.classList.toggle("hamburger-active");
-};
-mobileNav.addEventListener("click", () => toggleNav());
-
+    util.scrollMenuIds = $("a.nav-link[href]");
+    $("#menu").click(util.mobileMenu);
+    $(window).resize(util.windowResize);
+    $(document).scroll(util.scrollEvent);
+    
+  });
+  

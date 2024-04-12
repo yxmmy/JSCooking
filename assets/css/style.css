@@ -1,143 +1,237 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap");
+$color-primary: #f857a8;
+$color-secondary: #ff5858;
+$color-neutral-lt: #fff;
+$color-neutral-med: #ddd;
+$color-neutral-dk: #444;
+$a-tags: "a, a:active, a:hover, a:visited";
+$a-tags-no-hov: "a:link, a:visited, a:active";
+$headings-font: "Saira Semi Condensed", sans-serif;
+$shadow: 0px 3px 10px rgba(0, 0, 0, 0.1);
 
-* {
-  box-sizing: border-box;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-body {
-  padding: 0;
-  margin: 0;
-  font-family: "Poppins", sans-serif;
-}
-
-nav {
-  padding: 5px 5%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
-    rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
-  z-index: 1;
-}
-nav .logo {
-  display: flex;
-  align-items: center;
-}
-nav .logo img {
-  height: 25px;
-  width: auto;
-  margin-right: 10px;
-}
-nav .logo h1 {
-  font-size: 1.1rem;
-  background: linear-gradient(to right, #b927fc 0%, #2c64fc 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
+@mixin main-gradient {
+  background: $color-primary;
+  background: -webkit-linear-gradient(45deg, $color-primary, $color-secondary);
+  background: linear-gradient(45deg, $color-primary, $color-secondary);
 }
 
-nav ul {
-  list-style: none;
-  display: flex;
-}
-nav ul li {
-  margin-left: 1.5rem;
-}
-nav ul li a {
-  text-decoration: none;
-  color: #000;
-  font-size: 95%;
-  font-weight: 400;
-  padding: 4px 8px;
-  border-radius: 5px;
+@mixin shadow-box {
+  background-color: $color-neutral-lt;
+  box-shadow: $shadow;
 }
 
-nav ul li a:hover {
-  background-color: #f5f5f5;
+@mixin skew {
+  transform: skew(-20deg);
 }
 
-.hamburger {
-  display: none;
+@mixin unskew {
+  transform: skew(20deg);
+}
+
+/*-------------Reset-------------*/
+button {
+  background: none;
+  box-shadow: none;
+  border: none;
   cursor: pointer;
 }
 
-.hamburger .line {
-  width: 25px;
-  height: 1px;
-  background-color: #1f1f1f;
-  display: block;
-  margin: 7px auto;
-  transition: all 0.3s ease-in-out;
-}
-.hamburger-active {
-  transition: all 0.3s ease-in-out;
-  transition-delay: 0.6s;
-  transform: rotate(45deg);
+button:focus,
+input:focus {
+  outline: 0;
 }
 
-.hamburger-active .line:nth-child(2) {
-  width: 0px;
+html {
+  scroll-behavior: smooth;
 }
 
-.hamburger-active .line:nth-child(1),
-.hamburger-active .line:nth-child(3) {
-  transition-delay: 0.3s;
-}
-
-.hamburger-active .line:nth-child(1) {
-  transform: translateY(12px);
-}
-
-.hamburger-active .line:nth-child(3) {
-  transform: translateY(-5px) rotate(90deg);
-}
-
-.menubar {
-  position: absolute;
-  top: 0;
-  left: -60%;
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  width: 60%;
-  height: 100vh;
-  padding: 20% 0;
-  background: rgba(255, 255, 255);
-  transition: all 0.5s ease-in;
-  z-index: 2;
-}
-.active {
-  left: 0;
-  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-}
-
-.menubar ul {
+/*-------------Layout-------------*/
+body {
+  line-height: 1.5em;
   padding: 0;
-  list-style: none;
-}
-.menubar ul li {
-  margin-bottom: 32px;
+  margin: 0;
 }
 
-.menubar ul li a {
-  text-decoration: none;
-  color: #000;
-  font-size: 95%;
-  font-weight: 400;
-  padding: 5px 10px;
-  border-radius: 5px;
+section {
+  height: 100vh;
 }
 
-.menubar ul li a:hover {
-  background-color: #f5f5f5;
+#home {
+  background-color: #ddd;
 }
-@media screen and (max-width: 790px) {
-  .hamburger {
-    display: block;
+
+#about {
+  background-color: #aaa;
+}
+
+#work {
+  background-color: #888;
+}
+
+#contact {
+  background-color: #666;
+}
+
+/*-------------Helpers-------------*/
+.skew {
+  @include skew;
+}
+
+.un-skew {
+  @include unskew;
+}
+
+/*-------------Nav-------------*/
+#nav-wrapper {
+  overflow: hidden;
+  width: 100%;
+  margin: 0 auto;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+}
+
+#nav {
+  @include shadow-box;
+  display: flex;
+  flex-direction: column;
+  font-family: $headings-font;
+  height: 4em;
+  overflow: hidden;
+
+  &.nav-visible {
+    height: 100%;
+    overflow: auto;
   }
-  nav ul {
+}
+
+.nav {
+  display: flex;
+  height: 4em;
+  line-height: 4em;
+  flex-grow: 1;
+}
+
+.nav-link,
+.logo {
+  padding: 0 1em;
+}
+
+span.gradient {
+  @include main-gradient;
+  padding: 0 1em;
+  position: relative;
+  right: 1em;
+  margin-right: auto;
+
+  &:hover {
+    animation-name: logo-hover;
+    animation-duration: 0.3s;
+    animation-fill-mode: forwards;
+    animation-timing-function: cubic-bezier(0.17, 0.57, 0.31, 0.85);
+  }
+}
+
+h1.logo {
+  font-weight: 300;
+  font-size: 1.75em;
+  line-height: 0.75em;
+  color: $color-neutral-lt;
+}
+
+h1.logo #{$a-tags} {
+  text-decoration: none;
+  color: $color-neutral-lt;
+}
+
+.nav-link {
+  text-transform: uppercase;
+  text-align: center;
+  border-top: 0.5px solid $color-neutral-med;
+}
+
+#{$a-tags-no-hov} {
+  text-decoration: none;
+  color: $color-primary;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.right {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.btn-nav {
+  color: $color-primary;
+  padding-left: 2em;
+  padding-right: 2em;
+}
+
+@media (min-width: 800px) {
+  #nav-wrapper {
+    overflow: hidden;
+  }
+
+  #nav {
+    overflow: hidden;
+    flex-direction: row;
+  }
+
+  .nav-link {
+    border-top: none;
+  }
+
+  .right {
+    overflow: hidden;
+    flex-direction: row;
+    justify-content: flex-end;
+    position: relative;
+    left: 1.5em;
+    height: auto;
+  }
+
+  .btn-nav {
     display: none;
+  }
+
+  .nav #{$a-tags-no-hov} {
+    &.active {
+      @include main-gradient;
+      color: #fff;
+    }
+  }
+
+  .nav-link-span {
+    @include unskew;
+    display: inline-block;
+  }
+
+  .nav-link {
+    @include skew;
+    color: #777;
+    text-decoration: none;
+
+    &:last-child {
+      padding-right: 3em;
+    }
+  }
+
+  a:hover.nav-link:not(.active) {
+    color: $color-neutral-dk;
+    background: $color-neutral-med;
+    background: linear-gradient(45deg, $color-neutral-lt, #ddd);
+  }
+}
+
+@keyframes logo-hover {
+  20% {
+    padding-right: 0em;
+  }
+  100% {
+    padding-right: 5em;
   }
 }
