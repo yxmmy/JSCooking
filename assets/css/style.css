@@ -153,3 +153,49 @@ nav ul li a:hover {
 h1 {
   font-size: 150px;
 }
+
+.espace
+{
+  margin-top: 100px;
+}
+
+.caca
+{
+  outline:none;
+  position:relative;
+  visibility:hidden;
+}
+
+.splide-container {
+  max-width: 800px; /* Ajustez la largeur maximale selon vos besoins */
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.splide-slide {
+  background-color: #ccc;
+  color: #fff;
+  padding: 50px;
+  text-align: center;
+}
+
+.splide-arrow {
+  font-size: 24px;
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 10px;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  z-index: 1000;
+}
+
+.splide-arrow.prev {
+  left: 20px;
+}
+
+.splide-arrow.next {
+  right: 20px;
+}

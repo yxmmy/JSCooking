@@ -4,7 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Responsive Navbar</title>
+    <link rel="stylesheet" href="https://unpkg.com/@splidejs/splide@3.0.9/dist/css/splide.min.css">
+    <title>JSCooking</title>
     <link rel="stylesheet" href="assets/css/style.css" />
   </head>
   <body>
@@ -49,7 +50,38 @@
         </li>
       </ul>
     </div>
+    <div class="espace"></div>
 
-    <script src="assets/js/caroussel.js"></script>
+    
+<div class="splide-container">
+  <div class="splide">
+    <div class="splide__track">
+      <ul class="splide__list">
+        <li class="splide__slide" style="background-color: #ff6347;">Slide 1</li>
+        <li class="splide__slide" style="background-color: #ffd700;">Slide 2</li>
+        <li class="splide__slide" style="background-color: #87ceeb;">Slide 3</li>
+        <li class="splide__slide" style="background-color: #90ee90;">Slide 4</li>
+      </ul>
+    </div>
+  </div>
+  <button class="splide-arrow prev" aria-label="Previous">
+    &larr;
+  </button>
+  <button class="splide-arrow next" aria-label="Next">
+    &rarr;
+  </button>
+</div>
+
+<script src="https://unpkg.com/@splidejs/splide@3.0.9/dist/js/splide.min.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    var splide = new Splide('.splide', {
+      type: 'loop',
+      padding: '5rem',
+    });
+
+    splide.mount();
+  });
+</script>
   </body>
 </html>
