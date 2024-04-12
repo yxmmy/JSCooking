@@ -151,3 +151,19 @@ const fastRecipes = filterItems(recettes, 'dureeCuisson', 0);
 
 console.log("Recettes faciles :", easyRecipes);
 console.log("Recettes rapides :", fastRecipes);
+
+window.setInterval(() => {
+    const now = new Date()
+    console.log('Il est', ${now.getHours()},'h',${now.getMinutes()},'et'${now.getSeconds()})
+    
+}, 3000);
+
+const mobileNav = document.querySelector(".hamburger");
+const navbar = document.querySelector(".menubar");
+
+const toggleNav = () => {
+  navbar.classList.toggle("active");
+  mobileNav.classList.toggle("hamburger-active");
+};
+mobileNav.addEventListener("click", () => toggleNav());
+
