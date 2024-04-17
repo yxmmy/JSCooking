@@ -1,8 +1,10 @@
-var splide = new Splide( '.splide', {
-    type   : 'loop',
+document.addEventListener('DOMContentLoaded', function () {
+  var splide = new Splide('.splide', {
+    type: 'loop',
     padding: '5rem',
     autoplay: true,
-    interval: 1000,
-  } );
-  
+    interval: 3000,
+  });
+
   splide.mount();
+});
