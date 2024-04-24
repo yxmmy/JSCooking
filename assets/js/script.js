@@ -128,6 +128,32 @@ let recettes = [{
     difficulte: 'Facile',
 }]
 
+// Fonction pour filtrer les recettes en fonction de la difficulté
+function filterRecipes() {
+    const difficulty = document.getElementById('difficulty').value;
+
+    // Filtrer les recettes en fonction de la difficulté spécifiée
+    const filteredRecipes = filterItems(recettes, 'difficulte', difficulty);
+
+    // Afficher les recettes filtrées dans le DOM
+    displayFilteredRecipes(filteredRecipes);
+}
+
+// Fonction pour afficher les recettes filtrées dans le DOM
+function displayFilteredRecipes(filteredRecipes) {
+    const container = document.getElementById('filtered-recipes');
+
+    // Générer du HTML à partir des recettes filtrées
+    let html = '<ul>';
+    filteredRecipes.forEach(recipe => {
+        html += `<li>${recipe.nom}</li>`;
+    });
+    html += '</ul>';
+
+    // Afficher le HTML dans le conteneur
+    container.innerHTML = html;
+}
+
 function filterItems(recettes, key, value) {
     let filteredRecipes = [];
 
