@@ -32,11 +32,28 @@ nav .logo img {
 }
 nav .logo h1 {
     font-size: 1.1rem;
-    background: linear-gradient(to right, #b927fc 0%, #2c64fc 100%);
+    background: linear-gradient(to right, #fcaa27 0%, #d5e521 100%);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
   }
+
+  nav ul {
+    list-style: none;
+    display: flex;
+  }
+  nav ul li {
+    margin-left: 1.5rem;
+  }
+  nav ul li a {
+    text-decoration: none;
+    color: #000;
+    font-size: 95%;
+    font-weight: 400;
+    padding: 4px 8px;
+    border-radius: 5px;
+  }
+  
 
 nav ul li a:hover {
     background-color: #f5f5f5;
