@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>A propos</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+    <nav>
+        <div class="logo">
+            <img src="assets/img/LUC.jpg" alt="logo" />
+            <h1>Let US Cook</h1>
+        </div>
+        <ul>
+            <li>
+                <a href="index.html">Accueil</a>
+            </li>
+            <li>
+                <a href="recettes.html">Recettes</a>
+            </li>
+            <li>
+                <a href="contact.html">A propos</a>
+            </li>
+            <li>
+                <div><input type="text" id="searchInput" placeholder="Rechercher...">
+                    <ul id="resultsList"></ul>
+                </div>
+            </li>
+        </ul>
+    </nav>
+    <p>Bienvenue sur la page de nos différents contact, vous trouverez ci-dessous les différentes informations nous conernant.</p>
+    <div id="conseils" class="container">
+        <title>Localisation Map</title>
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+            integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+            crossorigin="" />
+        <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+            integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+            crossorigin=""></script>
+        </head>
+
+        <body>
+            <div id="map" style="width: 600px; height: 400px;"></div>
+    </div>
+
+    <h3>Nos informations :</h3><br>
+    </p>
+
+    <script src="./Assets/Js/API.js"></script>
+
+
+    <footer>
+        <p>&copy; 2024 Let Us Cook. Tous droits réservés.</p>
+    </footer>
+</body>
+
+</html>
