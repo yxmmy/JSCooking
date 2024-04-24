@@ -15,45 +15,37 @@
       </div>
       <ul>
         <li>
-          <a href="#">Accueil</a>
+          <a href="index.html">Accueil</a>
         </li>
         <li>
           <a href="recettes.html">Recettes</a>
         </li>
         <li>
-          <a href="#"></a>
-        </li>
-        <li>
-          <div class="recherche"><input type="text" placeholder="Search.."></div>
+          <div><input type="text" id="searchInput" placeholder="Rechercher...">
+            <ul id="resultsList"></ul></div>
         </li>
       </ul>
-      <div class="hamburger">
-        <span class="line"></span>
-        <span class="line"></span>
-        <span class="line"></span>
-      </div>
     </nav>
     <br>
     <p>Bienvenue sur Let Us Cook ! Le site de répertoire de recettes.</p>
     <p>Vous trouverez des recettes de tout types, bon appétit !</p>
- <div class="carroussel">   
-<div class="splide-container">
-  <div class="splide">
-    <div class="splide__track">
-      <ul class="splide__list">
-        <li class="splide__slide"> <img src="assets//img/boisson.jpg" alt="Boisson"></li>
-        <li class="splide__slide"> <img src="assets//img/plat.jpg" alt="Plat"></li>
-        <li class="splide__slide"> <img src="assets//img/dessert.jpg" alt="Dessert"></li>
-        <li class="splide__slide"> <img src="assets//img/entrée.jpeg" alt="Boisson"></li>
-
-      </ul>
-    </div>
+    <div class="carousel">
+      <div class="carousel-images">
+          <img src="assets/img/boisson.jpg" alt="Image 1">
+          <img src="assets/img/dessert.jpg" alt="Image 2">
+          <img src="assets/img/entrée.jpeg" alt="Image 3">
+          <img src="assets/img/plat.jpg" alt="Image 3">
+      </div>
+      <button class="prev">&#10094;</button>
+      <button class="next">&#10095;</button>
   </div>
-</div>
-</div>
-<script src="https://unpkg.com/@splidejs/splide@3.0.9/dist/js/splide.min.js"></script>
+
+  <script src="assets/js/recherche.js"></script>
 <script src="assets/js/caroussel.js"></script>
 <script src="assets/js/script.js"></script>
-
+<footer>
+  <p>&copy; 2024 Let Us Cook. Tous droits réservés.</p>
+  
+</footer>
   </body>
 </html>

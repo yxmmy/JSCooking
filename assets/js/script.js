@@ -34,7 +34,7 @@ let recettes = [{
     dureeTotale: 4300,
     nbPersonnes: 5,
     ustensiles: ['1 bol', '1 couvercle', '1 couteau', '1 marmite', '1 balance'],
-    difficulte: 'Moyenne',
+    difficulte: 'Moyen',
 },
 
 {
@@ -73,7 +73,7 @@ let recettes = [{
     dureeTotale: 4200,
     nbPersonnes: 6,
     ustensiles: ['1 mixeur', '1 cocotte', '1 couteau', '1 pinceaux', '1 cuillere en bois','1 mijoteuse electrique','1 balance de cuisine'],
-    difficulte: 'Facile',
+    difficulte: 'Moyen',
 },
 
 {
@@ -112,7 +112,7 @@ let recettes = [{
     dureeTotale: 1500,
     nbPersonnes: 6,
     ustensiles: ['1 saladier', '1 plat', '1 fouet de cuisine', '1 plat a gratin', '1 balance de cuisine','1 rrobot patissier'],
-    difficulte: 'Moyenne',
+    difficulte: 'Moyen',
 },
 
 {
@@ -128,6 +128,55 @@ let recettes = [{
     difficulte: 'Facile',
 }]
 
+// Fonction pour filtrer les recettes en fonction de la difficulté
+function filterRecipes() {
+    const difficulty = document.getElementById('difficulty').value;
+
+    // Filtrer les recettes en fonction de la difficulté spécifiée
+    const filteredRecipes = filterItems(recettes, 'difficulte', difficulty);
+
+    // Afficher les recettes filtrées dans le DOM
+    displayFilteredRecipes(filteredRecipes);
+}
+
+// Fonction pour afficher les recettes filtrées dans le DOM
+function displayFilteredRecipes(filteredRecipes) {
+    const container = document.getElementById('filtered-recipes');
+
+    // Générer du HTML à partir des recettes filtrées
+    let html = '<ul>';
+    filteredRecipes.forEach((recipe, index) => {
+        // Ajouter un identifiant unique à chaque élément avec l'index
+        html += `<li onclick="afficherDetailsRecette(${index})">${recipe.menu}</li>`;
+        // Ajouter un conteneur pour les détails de la recette
+        html += `<div id="details-recette-${index}" style="display: none;"></div>`;
+    });
+    html += '</ul>';
+
+    // Afficher le HTML dans le conteneur
+    container.innerHTML = html;
+}
+
+// Fonction pour afficher les détails d'une recette
+function afficherDetailsRecette(index) {
+    const recette = recettes[index]; // Récupérer la recette à partir de l'index
+    const detailsRecetteContainer = document.getElementById(`details-recette-${index}`);
+    // Construire le contenu HTML des détails de la recette
+    const detailsHTML = `
+        <p>Type: ${recette.type}</p>
+        <p>Difficulté: ${recette.difficulte}</p>
+        <p>Ingrédients: ${recette.ingredients.join(', ')}</p>
+        <!-- Ajoutez d'autres détails ici selon vos besoins -->
+    `;
+    // Afficher les détails de la recette dans le conteneur
+    detailsRecetteContainer.innerHTML = detailsHTML;
+    // Afficher le conteneur des détails
+    detailsRecetteContainer.style.display = 'block';
+}
+
+
+
+
 function filterItems(recettes, key, value) {
     let filteredRecipes = [];
 
@@ -140,9 +189,3 @@ function filterItems(recettes, key, value) {
 
     return filteredRecipes;
 }
-
-const easyRecipes = filterItems(recettes, 'difficulte', 'Facile');
-const fastRecipes = filterItems(recettes, 'dureeCuisson', 0);
-
-console.log("Recettes faciles :", easyRecipes);
-console.log("Recettes rapides :", fastRecipes);
