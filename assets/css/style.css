@@ -166,3 +166,8 @@ body p {
 #infos {
   text-align: center;
 }
+
+h1 {
+  text-align: center;
+  color: purple;
+}
