@@ -32,7 +32,7 @@ nav .logo img {
   margin-right: 10px;
 }
 nav .logo h1 {
-  font-size: 50px;
+  font-size: 30px;
   background: linear-gradient(to right, #fcaa27 0%, #d5e521 100%);
   -webkit-background-clip: text;
   background-clip: text;
@@ -140,10 +140,6 @@ button {
   right: 0;
 }
 
-p {
-  margin-left: 245px;
-}
-
 footer {
   background: linear-gradient(to right, #ffffff 5%, #ec8814 95%);
   text-align: center;
@@ -154,4 +150,24 @@ footer {
   padding: 20px;
   text-align: center; 
   border-top: 1px solid #ccc; 
+}
+
+#map {
+  text-align: center;
+  margin: 0 auto;
+  display: block;
+}
+
+body p {
+  font-size: 20px;
+  text-align: center;
+}
+
+#infos {
+  text-align: center;
+}
+
+h1 {
+  text-align: center;
+  color: purple;
 }
